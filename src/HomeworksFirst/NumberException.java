@@ -1,7 +1,6 @@
 package HomeworksFirst;
 
 import java.util.Arrays;
-import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -26,7 +25,7 @@ public class NumberException {
 				position = Integer.parseInt(input.nextLine());
 
 				if (position < 0 || position > 4) {
-					throw new NumberLessThanZeroException(input);
+					throw new exceptions.NumberLessThanZeroException(input);
 				}
 				if (position != 0) {
 					System.out.print("Inserisci un nuovo valore per la posizione " + position + ": ");
@@ -35,13 +34,12 @@ public class NumberException {
 					array[position] = newNum;
 					log.info("Nuovo stato dell'array: " + Arrays.toString(array));
 				}
-			} catch (InputMismatchException e) {
-				System.out.println("Errore: Inserire un numero intero.");
+			} catch (NumberFormatException e) {
+				log.error("Errore: Inserire un numero intero.");
 			} catch (IllegalArgumentException e) {
-				System.out.println("Errore: " + e.getMessage());
+				log.error("Errore: " + e.getMessage());
 			} catch (NumberLessThanZeroException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				System.out.println("Errore: " + e.getMessage());
 			}
 		} while (position != 0);
 
@@ -57,5 +55,4 @@ public class NumberException {
 		}
 		return array;
 	}
-
 }
