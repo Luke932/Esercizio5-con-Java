@@ -1,4 +1,4 @@
-package HomeworksTh;
+package exceptions;
 
 public class BancaException extends Exception {
 	public BancaException(String message) {

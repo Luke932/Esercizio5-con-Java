@@ -1,22 +1,24 @@
 package HomeworksTh;
 
+import exceptions.BancaException;
+
 public class ContoOnLine extends ContoCorrente {
-    double maxPrelievo;
+	double maxPrelievo;
 
-    ContoOnLine(String titolare, double saldo, double maxP) {
-        super(titolare, saldo);
-        this.maxPrelievo = maxP;
-    }
+	ContoOnLine(String titolare, double saldo, double maxP) {
+		super(titolare, saldo);
+		this.maxPrelievo = maxP;
+	}
 
-    void stampaSaldo() {
-        System.out.println("Titolare: " + titolare + " - Saldo: " + saldo + " - Num movimenti: " + nMovimenti
-                + " - Massimo movimenti: " + maxMovimenti + " - Massimo prelievo possibile: " + maxPrelievo);
-    }
+	void stampaSaldo() {
+		System.out.println("Titolare: " + titolare + " - Saldo: " + saldo + " - Num movimenti: " + nMovimenti
+				+ " - Massimo movimenti: " + maxMovimenti + " - Massimo prelievo possibile: " + maxPrelievo);
+	}
 
-    void preleva(double x) throws BancaException {
-        if (x > maxPrelievo) {
-            throw new BancaException("Il prelievo non è disponibile");
-        }
-        super.preleva(x);
-    }
+	void preleva(double x) throws BancaException {
+		if (x > maxPrelievo) {
+			throw new BancaException("Il prelievo non è disponibile");
+		}
+		super.preleva(x);
+	}
 }

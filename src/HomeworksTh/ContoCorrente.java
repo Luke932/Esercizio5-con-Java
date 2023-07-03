@@ -1,5 +1,7 @@
 package HomeworksTh;
 
+import exceptions.BancaException;
+
 public class ContoCorrente {
 	String titolare;
 	int nMovimenti;

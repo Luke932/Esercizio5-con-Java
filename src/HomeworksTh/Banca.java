@@ -1,5 +1,7 @@
 package HomeworksTh;
 
+import exceptions.BancaException;
+
 public class Banca {
 	public static void main(String args[]) {
 		ContoCorrente conto1 = new ContoCorrente("Grossi Mario", 20000.0);
