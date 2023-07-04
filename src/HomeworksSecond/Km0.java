@@ -1,6 +1,5 @@
 package HomeworksSecond;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import org.slf4j.Logger;
@@ -22,7 +21,7 @@ public class Km0 {
 
 			double kmXLt = calcolaKmPerLitro(km, litri);
 			log.info("Km/litro percorsi: " + kmXLt);
-		} catch (InputMismatchException e) {
+		} catch (NumberFormatException e) {
 			System.out.println("Errore: Inserire un numero valido.");
 		} catch (ArithmeticException e) {
 			System.out.println("Errore: Impossibile dividere per zero.");
